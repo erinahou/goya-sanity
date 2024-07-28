@@ -113,6 +113,14 @@ export default {
         .required()
         .error(`Display image required to publish page on website`),
     },
-
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 200, // Adjust the maximum length as needed
+      },
+    },
   ],
 };
