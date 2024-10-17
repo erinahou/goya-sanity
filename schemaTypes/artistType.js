@@ -8,8 +8,13 @@ export default {
   fields: [
     {
       name: 'name',
-      title: 'Name',
+      title: 'Name (in English)',
       type: 'string',
-    }
+    },
+    {
+      name: 'nameJapanese',
+      title: 'Name (in Japanese)',
+      type: 'string',
+    },
   ],
 };

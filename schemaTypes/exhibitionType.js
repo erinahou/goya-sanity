@@ -24,8 +24,17 @@ export default {
         .error(`Featured artist(s) required to publish page on website`),
     },
     {
-      name: 'description',
-      title: 'Description',
+      name: 'descriptionEnglish',
+      title: 'Description (in English)',
+      type: 'array',
+      of: [{type: 'block'}],
+      validation: (rule) => rule
+        .required()
+        .error(`Description required to publish page on website`),
+    },
+    {
+      name: 'descriptionJapanese',
+      title: 'Description (in Japanese)',
       type: 'array',
       of: [{type: 'block'}],
       validation: (rule) => rule
@@ -112,6 +121,35 @@ export default {
       validation: (rule) => rule
         .required()
         .error(`Display image required to publish page on website`),
+    },
+    {
+      name: 'gallery',
+      // type: 'array',
+      // of: [
+      //   { type: 'image' }
+      // ],
+      // options: {
+      //   layout: 'grid'
+      // },
+      type: 'object', // Change to object to hold both images and a single caption
+      fields: [
+        {
+          name: 'images',
+          type: 'array',
+          of: [
+            { type: 'image' }
+          ],
+          options: {
+            layout: 'grid'
+          }
+        },
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Carousel Caption',
+          description: 'Add a caption for the entire carousel'
+        }
+      ]
     },
     {
       name: 'slug',
